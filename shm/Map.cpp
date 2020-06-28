@@ -30,8 +30,9 @@ Island* Map::getIsland(const Coordinates& coordinate) {
                                 return i.getPosition() == coordinate;
                             });
 
-    if (itr == _vecOfIslands.end())
-        return {};
-
-    return std::addressof(*itr);
+    if (itr == _vecOfIslands.end()) {
+        return nullptr;
+    } else {
+        return std::addressof(*itr);
+    }
 }
